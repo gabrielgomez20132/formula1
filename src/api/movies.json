@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "The Shining",
+    "img": "imagen_01"
+  },
+  {
+    "id": 2,
+    "name": "Parasite",
+    "img": "imagen_02"
+  },
+  {
+    "id": 3,
+    "name": "The Substance",
+    "img": "imagen_03"
+  },
+  {
+    "id": 4,
+    "name": "Clockwork Orange",
+    "img": "imagen_04"
+  },
+  {
+    "id": 5,
+    "name": "Perfect Days",
+    "img": "imagen_05"
+  },
+  {
+    "id": 6,
+    "name": "Esperando la Carroza",
+    "img": "imagen_06"
+  },
+  {
+    "id": 7,
+    "name": "Old Boy",
+    "img": "imagen_07"
+  },
+  {
+    "id": 8,
+    "name": "2001: a space odyssey",
+    "img": "imagen_08"
+  },
+  {
+    "id": 9,
+    "name": "El Angel",
+    "img": "imagen_09"
+  },
+  {
+    "id": 10,
+    "name": "El Clan",
+    "img": "imagen_10"
+  },
+  {
+    "id": 11,
+    "name": "Eyes Wide Shut",
+    "img": "imagen_11"
+  },
+  {
+    "id": 12,
+    "name": "Monster",
+    "img": "imagen_12"
+  }
+]
