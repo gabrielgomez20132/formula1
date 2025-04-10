@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import AppRouter from "./Router/AppRouter";
+import AppRouter from "./router/AppRouter";
 import { CharacterProvider } from "./context/CharacterContext";
 
 function App() {
