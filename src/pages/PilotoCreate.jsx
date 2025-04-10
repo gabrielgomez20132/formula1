@@ -52,9 +52,11 @@ const PilotoCreate = () => {
       return;
     }
 
-    await addDriver(formData);
+    const agregado = await addDriver(formData);
+  if (agregado) {
     toast.success("Piloto agregado exitosamente ✅ ");
     setTimeout(() => navigate("/pilotos"), 1000);
+  }
   };
 
   return (

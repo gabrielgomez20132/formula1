@@ -121,15 +121,17 @@ export const CharacterProvider = ({ children }) => {
     );
     if (exists) {
       toast.error("Ese piloto ya existe");
-      return;
+      return false; 
     }
 
     try {
       const { data: savedDriver } = await axios.post(mockApiURL, newDriver);
       setDrivers((prev) => [...prev, savedDriver]);
+      return true; // 👈 se agregó con éxito
     } catch (error) {
       console.error("Error al agregar piloto:", error);
       toast.error("No se pudo agregar el piloto");
+      return false;
     }
   };
 
