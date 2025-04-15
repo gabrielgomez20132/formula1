@@ -29,7 +29,6 @@ function PilotoEdit() {
     Chinese: "Chino",
   };
 
-
   const [form, setForm] = useState({
     name: "",
     nationality: "",
@@ -45,7 +44,8 @@ function PilotoEdit() {
         setForm(res.data);
         setLoading(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Error al cargar el piloto:", error);
         toast.error("Error al cargar el piloto");
         setLoading(false);
       });
@@ -61,12 +61,24 @@ function PilotoEdit() {
 
     axios
       .put(`https://67efdbaa2a80b06b88960b03.mockapi.io/api/v1/drivers/${id}`, form)
-      .then(() => {
+      .then((res) => {
+        console.log("Respuesta del servidor:", res); // Ver el contenido de la respuesta
         toast.success("Piloto actualizado correctamente");
         refetchDrivers(); // actualizamos la lista en contexto
         setTimeout(() => navigate("/pilotos"), 2000);
       })
-      .catch(() => toast.error("Error al actualizar piloto"));
+      .catch((error) => {
+        // Mejor manejo de errores
+        if (error.response) {
+          console.error("Respuesta del servidor con error:", error.response.data);
+          console.error("Código de estado:", error.response.status);
+        } else if (error.request) {
+          console.error("No hubo respuesta del servidor:", error.request);
+        } else {
+          console.error("Error inesperado:", error.message);
+        }
+        toast.error("Error al actualizar piloto");
+      });
   };
 
   return (
