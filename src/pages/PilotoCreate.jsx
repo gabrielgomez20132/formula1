@@ -53,10 +53,10 @@ const PilotoCreate = () => {
     }
 
     const agregado = await addDriver(formData);
-  if (agregado) {
-    toast.success("Piloto agregado exitosamente ✅ ");
-    setTimeout(() => navigate("/pilotos"), 1000);
-  }
+    if (agregado) {
+      toast.success("Piloto agregado exitosamente ✅ ");
+      setTimeout(() => navigate("/pilotos"), 1000);
+    }
   };
 
   return (

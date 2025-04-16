@@ -51,7 +51,6 @@ export const CharacterProvider = ({ children }) => {
   return (
     <CharacterContext.Provider
       value={{
-        characters: drivers,
         loading,
         addDriver,
         drivers,

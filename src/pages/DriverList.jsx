@@ -15,7 +15,7 @@ function DriverList() {
   };
 
   const handleDeleted = (id) => {
-    console.log("Piloto eliminado con ID:", id);
+    //console.log("Piloto eliminado con ID:", id);
     setSelectedId(null); // Cerrar el modal después de eliminar
   };
 

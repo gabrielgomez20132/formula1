@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { CharacterContext } from "../context/CharacterContext";
 
 const IndexPage = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [loadingCarga, setLoadingCarga] = useState(false);
   const [pilotosCargados, setPilotosCargados] = useState(false);
+  const { refetchDrivers } = useContext(CharacterContext);
 
   const mockApiURL = "https://67efdbaa2a80b06b88960b03.mockapi.io/api/v1/drivers";
 
@@ -118,8 +120,9 @@ const IndexPage = () => {
     return translations[nationality.trim()] || nationality.trim();
   };
 
-  const handleIngresar = () => {
+  const handleIngresar = async () => {
     setLoading(true);
+    await refetchDrivers(); // Cargo los pilotos actualizados del context
     navigate("/pilotos");
   };
 
